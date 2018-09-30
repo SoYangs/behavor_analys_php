@@ -4,7 +4,6 @@ if($_GET){
     $years = date('Y-m');
     //设置路径目录信息
     $url ='./runtime/log/maidian/'.$years.'/'.date('Ymd').'_request_log.txt';
-    //var_dump($url);exit;
     $dir_name=dirname($url);
     //目录不存在就创建
     if(!file_exists($dir_name))

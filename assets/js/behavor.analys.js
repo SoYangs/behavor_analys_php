@@ -1,10 +1,8 @@
-/**
- * Created by BYM on 2016/8/29.
- */
-//初次加载username到cookie当中
 (function(){
-	//向cookie中写死一个用户，因为现在前端登录界面没有开发出来
-	document.cookie ="vincent";
+	//用户cookie
+	document.cookie ="";
+    //浏览器标识可以通过cookie等来实现，或者你们也许有更好的方案
+    //document.statistics_browser_id = '';
 })();
 
 var second = 0;
@@ -12,7 +10,7 @@ window.setInterval(function () {
     second ++;
 }, 1000);
 
-//关闭、刷新页面之前，页面上埋点 - vincent - 2017年8月15日
+//关闭、刷新页面之前，页面上埋点
 window.onbeforeunload = function() {
 
     var dataArr = {
@@ -51,10 +49,9 @@ window.onbeforeunload = function() {
         }
         args += i + '=' + params[i];
     }
-  
     //通过Image对象请求后端脚本
     var img = new Image(1, 1);
-    var src = './receive.php?args=' + encodeURIComponent(args);  //后台接口地址
+    var src = '../../receive.php?args=' + encodeURIComponent(args);  //后台接口地址,在web目录可这么写
     img.src = src; 
 };
 
